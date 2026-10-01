@@ -48,6 +48,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
+
+//En este bloque se mostrará el diseño de la app en el dispositivo o el emulador.
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
@@ -87,6 +89,11 @@ fun TipTimeLayout() {
             style = MaterialTheme.typography.displaySmall
         )
         Spacer(modifier = Modifier.height(150.dp))
+
+        Text(
+            text = "Desarrollado por: Julian Bernal Marin",
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
 }
 
@@ -100,6 +107,9 @@ private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
     return NumberFormat.getCurrencyInstance().format(tip)
 }
 
+/**
+ * Se mostrará el diseño de la app en Design y en el panel Split.
+ */
 @Preview(showBackground = true)
 @Composable
 fun TipTimeLayoutPreview() {
